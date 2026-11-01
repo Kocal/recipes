@@ -1,0 +1,22 @@
+{
+    "bundles": {
+        "Symfony\\UX\\Css\\UXCssBundle": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "conflict": {
+        "symfony/flex": "<1.20.0 || >=2.0.0,<2.3.0"
+    },
+    "add-lines": [
+        {
+            "file": "assets/app.js",
+            "content": [
+                "import '../var/ux_css/styles.css';"
+            ],
+            "position": "after_target",
+            "target": "import './styles/app.css';",
+            "warn_if_missing": true
+        }
+    ]
+}
